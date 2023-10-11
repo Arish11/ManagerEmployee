@@ -11,10 +11,14 @@ public class DuplicateNumber {
 		System.out.println("Please enter the list of numbers");
 		for(int i=0 ; i < 5; i++) {
 			int nextNum =  sc.nextInt();
-			if(checkDuplicate(arr, nextNum)) {
-				System.out.println("The number is a duplicate and already exists");
-			}else {
-				arr[i] = nextNum; 
+			try {
+				if(checkDuplicate(arr, nextNum)) {
+					throw new Exception("This is a duplicate");
+				}else {
+					arr[i] = nextNum; 
+				}
+			} catch (Exception e) {
+				System.out.println("Not Allowed! "+e.getMessage());
 			}
 		}
 		sc.close();
