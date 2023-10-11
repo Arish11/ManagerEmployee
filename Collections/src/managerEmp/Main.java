@@ -38,8 +38,8 @@ public class Main {
 
 	public static void main(String[] args) {
 		Company company = new Company();
-		company.addEmployee(1, new int[] { 2, 3, 11, 12, 15 });
-		company.addEmployee(2, new int[] { 4, 5, 8, 9, 0 });
+		company.addEmployee(1, new int[] { 2, 11, 12, 15 });
+		company.addEmployee(2, new int[] { 4,3, 5, 8, 9, 0 });
 		company.addEmployee(3, new int[] { 6, 7, 10 });
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter the manager id ");
