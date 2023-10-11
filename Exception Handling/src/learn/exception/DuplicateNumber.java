@@ -1,6 +1,20 @@
 package learn.exception;
 
+import java.io.Serializable;
 import java.util.Scanner;
+
+class DuplicateNumberException extends Exception implements Serializable{
+	private static final long serialVersionUID = 1L;
+	
+	public DuplicateNumberException() {
+		System.out.println("This is an error and you cannot enter duplicate values");
+	}
+	
+	public DuplicateNumberException(String s) {
+		System.out.println();
+	}
+	
+}
 
 public class DuplicateNumber {
 
@@ -13,12 +27,12 @@ public class DuplicateNumber {
 			int nextNum =  sc.nextInt();
 			try {
 				if(checkDuplicate(arr, nextNum)) {
-					throw new Exception("This is a duplicate");
+					throw new DuplicateNumberException("This is a duplicate");
 				}else {
 					arr[i] = nextNum; 
 				}
 			} catch (Exception e) {
-				System.out.println("Not Allowed! "+e.getMessage());
+				System.out.println("Not Allowed! ");
 			}
 		}
 		sc.close();
